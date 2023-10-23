@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShowController;
+use App\Http\Controllers\UserFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,9 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 Route::get('showUsers', [ShowController::class, 'showView']);
+
 Route::get('showarray', [ShowController::class, 'showarray']);
+
+Route::view('userform', 'forms/user_form');
+
+Route::get('UserFormController', [UserFormController::class, 'showUser']);
